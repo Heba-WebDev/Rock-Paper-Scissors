@@ -1,0 +1,143 @@
+
+
+
+/*Font: Barlow Semi Condensed*/
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    box-sizing: border-box;
+     /* colors */
+     --Scissors-Gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+     --Paper-Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
+     --Rock-Gradient:  hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
+     --cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%);
+     --Dark-text: hsl(229, 25%, 31%);
+     --Score-text: hsl(229, 64%, 46%);
+     --Header-outline: hsl(217, 16%, 45%);
+     --Radial-Gardient-BG: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
+ 
+
+      /* colors */
+      --fs-700: 1.5rem;
+      --fs-600: 1rem;
+      --fs-500: 1rem;
+      --fs-400: 0.9375rem;
+      --fs-300: 1rem;
+      --fs-200: 0.875rem;
+}
+
+@media (min-width: 35em) {
+    :root {
+        --fs-800: 5rem;
+        --fs-700: 2.5rem;
+        --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
+        --fs-400: 1rem;
+    }
+}
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+        --fs-800: 6.25rem;
+        --fs-700: 3.5rem;
+        --fs-600: 2rem;
+        --fs-500: 1.75rem;
+        --fs-400: 1.125rem;
+    }
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+.uppercase { text-transform: uppercase; }
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
+}
+
+
+
+
+
+
+body {
+    font-family: 'Barlow Semi Condensed';
+}
+
