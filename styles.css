@@ -148,6 +148,7 @@ body {
 }
 
 
+
 .title-score {
     justify-content: space-between;
     border: var(--Header-outline) solid 3px;
@@ -156,6 +157,19 @@ body {
 }
 
 
+@media (min-width: 45rem) {
+    .title-score {
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 80rem) {
+    .title-score {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
 
 
 .score-container {
@@ -182,7 +196,7 @@ body {
 .rock-paper-scissors {
     background-image: url(/Rock-Paper-Scissors/images/bg-triangle.svg);
     background-repeat: no-repeat;
-    background-size: 180px;
+    background-size: 175px;
     background-position: center center;
     grid-template-columns: repeat(fill, minmax(120px, 150px));
     grid-template-rows: repeat(2,1fr);
@@ -190,10 +204,17 @@ body {
     justify-content: center;
 }
 
-
-
+@media (min-width: 45rem) {
+    .rock-paper-scissors {
+        background-size: 230px;
+        padding: 2rem 0;
+        place-content: center;
+        
+    }
+}
 
 .paper {
+  
     grid-row: 1;
     grid-column: 1/2;
     background-color: white;
@@ -205,7 +226,9 @@ body {
 }
 
 
+
 .scissor {
+   
     grid-row: 1;
     grid-column: 3/4;
     background-color: white;
@@ -227,14 +250,28 @@ body {
     border: 10px solid var(--Rock-Gradient);
 }
 
-.triangle {
-    width: 50%;
-    position: absolute;
-    z-index: -1;
-    left: 25%;
-    top: 35%;
-}
 
+@media (min-width: 45rem) {
+    .paper {
+        width: 150px;
+        height: 150px; 
+        border: 15px solid var(--Paper-Gradient);
+    }
+    
+    
+    
+    .scissor {
+        width: 150px;
+        height: 150px;  
+        border: 15px solid var(--Scissors-Gradient);
+    }
+    
+    .rock {
+        width: 150px;
+        height: 150px; 
+        border: 15px solid var(--Rock-Gradient);
+    }
+}
 
 .readrules {
     color: white;
@@ -245,8 +282,20 @@ body {
     justify-self: center;
     padding: 0.5rem 2rem;
     border-radius: 8px;
+   
 }
 
+@media (min-width: 45rem) {
+    .readrules {
+    margin-top: 90px;
+    }
+}
+
+@media (min-width: 45rem) {
+    .readrules {
+        justify-self: end;
+    }
+}
 
 .rules {
     background-color: white;
