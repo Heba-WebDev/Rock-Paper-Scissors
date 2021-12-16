@@ -172,6 +172,7 @@ body {
 }
 
 
+
 .score-container {
     flex-direction: column;
     align-items: center;
@@ -282,7 +283,13 @@ body {
     justify-self: center;
     padding: 0.5rem 2rem;
     border-radius: 8px;
-   
+    grid-row: 7/8;
+}
+
+@media (min-width: 18rem) {
+    .readrules {
+        grid-row: 3/4;
+    }
 }
 
 @media (min-width: 45rem) {
@@ -305,3 +312,66 @@ body {
     padding: 3rem 1rem;
 }
 
+.playerVsHouse {
+   justify-content: space-between;
+    padding: 5rem 0;
+}
+
+@media (min-width: 45rem) {
+    .playerVsHouse {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.player, .house {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.player-pic {
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    border: 15px solid var(--Paper-Gradient);
+}
+
+
+.youPicked, .housePicked {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.house-pic {
+  height: 110px;
+  width: 110px;
+  background-color: rgb(31, 31, 73);
+  border-radius: 50%;
+}
+
+@media (min-width: 45rem) {
+    .player-pic {
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: white;
+        width: 150px;
+        height: 150px;
+        border: 15px solid var(--Paper-Gradient);
+    }
+
+    .house-pic {
+        height: 140px;
+        width: 140px;
+        background-color: rgb(31, 31, 73);
+        border-radius: 50%;
+      }
+}
