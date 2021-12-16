@@ -5,30 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
-  
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Rock, Paper, Scissors | Frontend Mentor</title>
 </head>
 <body>
 
+<main class="main grid">
+
+<section class="title-score flex">
+
+<div class="title">
+<img src="/Rock-Paper-Scissors/images/logo.svg" alt="logo">
+</div>
+
+<div class="score-container flex">
+  <span class="score-title uppercase">Score</span>
+  <span class="score">0</span>
+</div>
+
+</section>
+
+
+<section class="rock-paper-scissors grid">
 
   
-  <script src="sandbox.js"></script>
+<div class="paper">
+  <img src="/Rock-Paper-Scissors/images/icon-paper.svg" alt="paper">
+</div>
+
+<div class="scissor grid">
+  <img src="/Rock-Paper-Scissors/images/icon-scissors.svg" alt="scissor">
+</div>
+
+<div class="rock grid">
+  <img src="/Rock-Paper-Scissors/images/icon-rock.svg" alt="rock">
+</div>
+
+</section>
+
+<section class="readrules uppercase">
+
+  <span>Rules</span>
+
+</section>
+
+
+<section class="rules grid">
+  <span class="uppercase fs-700" style="font-size: 35px; color: hsl(229, 25%, 31%); text-align: center;">Rules</span>
+  <div class="rules-pic">
+    <img src="/Rock-Paper-Scissors/images/image-rules.svg" alt="rules">
+  </div>
+
+  <div class="rules-close" style="margin: 0 auto; align-self: flex-end;">
+    <img src="/Rock-Paper-Scissors/images/icon-close.svg" alt="close">
+  </div>
+</section>
+
+</main>
+  
+
+
+
+
+<script src="sandbox.js"></script>
 </body>
 </html>
