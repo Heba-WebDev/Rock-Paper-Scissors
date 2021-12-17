@@ -365,7 +365,6 @@ body {
         background-color: white;
         width: 150px;
         height: 150px;
-        border: 15px solid var(--Paper-Gradient);
     }
 
     .house-pic {

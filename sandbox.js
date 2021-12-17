@@ -31,6 +31,7 @@ rules.style.display = 'none';
 //The chosing section
 
 let playerVsHouse = document.querySelector('.playerVsHouse');
+playerVsHouse.style.display = 'none'
 
 
 openRulesBtn.addEventListener('click', openThePage);
@@ -77,13 +78,21 @@ function closeThePage() {
 
 
 
+//The Array that will keep the other two choices left for the house
 
-
+let houseChoice = [];
 
 
 //The varabile that will keep track of the choise of the player
 
 let thePlayerChose = '';
+
+
+
+
+
+
+
 
 //Paper
 
@@ -92,8 +101,15 @@ let paper = document.querySelector('.paper');
 paper.addEventListener('click', playerChosePaper);
 
 function playerChosePaper() {
+  houseChoice.push('scissor');
+  houseChoice.push('rock');
+  playerChose = true;
+  playerVsHouse.style.display = '';
   game.style.display = 'none';
   thePlayerChose += 'paper';
+  document.querySelector('.pic-paper').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
+  document.querySelector('.player-pic').style.border = '15px solid var(--Paper-Gradient)';
+ return thehouseChose()
 }
 
 //Rock
@@ -103,8 +119,18 @@ let rock = document.querySelector('.rock');
 rock.addEventListener('click', playerChoseRock);
 
 function playerChoseRock() {
+  houseChoice.push('scissor');
+  houseChoice.push('paper');
+  playerChose = true;
+  playerVsHouse.style.display = '';
   game.style.display = 'none';
   thePlayerChose += 'rock';
+  document.querySelector('.pic-paper').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
+  document.querySelector('.player-pic').style.border = '15px solid var(--Rock-Gradient)';
+  
+    return thehouseChose()
+
+
 }
 
 
@@ -116,13 +142,35 @@ let scissor = document.querySelector('.scissor');
 scissor.addEventListener('click', playerChoseScissor);
 
 function playerChoseScissor() {
+  houseChoice.push('paper');
+  houseChoice.push('rock');
+  playerChose = true;
+  playerVsHouse.style.display = '';
   game.style.display = 'none';
   thePlayerChose += 'scissor';
+  document.querySelector('.pic-paper').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
+  document.querySelector('.player-pic').style.border = '15px solid var(--Scissors-Gradient)';
+ return thehouseChose()
 }
 
 
 
-game.style.display = 'none';
 
 
 
+
+function thehouseChose() {
+  let randomHouseChoice = Math.floor((Math.random() * 2) + 1);
+
+  if(houseChoice[randomHouseChoice] == 'paper') {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Paper-Gradient)';
+  } else if(houseChoice[randomHouseChoice] == 'rock') {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Rock-Gradient)';
+  } else {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Scissors-Gradient)';
+  }
+
+}
