@@ -3,6 +3,10 @@
 
 let rulesCount = 0;
 
+//A varible to keep track when the result is showing 
+
+let resultShowing = 0;
+
 //a variable to check if the player chose or not
 
 let playerChose = false;
@@ -28,53 +32,11 @@ let openRulesBtn = document.querySelector('.readrules');
 let rules = document.querySelector('.rules');
 rules.style.display = 'none';
 
-//The chosing section
+// The result section
 
-let playerVsHouse = document.querySelector('.playerVsHouse');
-playerVsHouse.style.display = 'none'
+let result = document.querySelector('.result');
 
-
-openRulesBtn.addEventListener('click', openThePage);
-
-function openThePage() {
-   if(rulesCount === 0) {
-    rulesCount++;
-    openRulesBtn.style.display = 'none';
-    document.body.style.overflow = 'hidden';
-    rules.style.display = '';
-    document.body.style.padding = '0';
-    game.style.display = 'none';
-    playerVsHouse.style.display = 'none';
-    titleAndScore.style.display = 'none';
-   }
-
-}
-
-
-closeRulesBtn.addEventListener('click', closeThePage);
-
-function closeThePage() {
-
-    if(rulesCount == 1) {
-      document.body.style.padding = '2rem';
-      document.body.style.overflow = '';
-      rules.style.display = 'none';
-      game.style.display = '';
-      titleAndScore.style.display = '';
-      openRulesBtn.style.display = '';
-      game.style.display = '';
-      
-      rulesCount--;
-    }
-
-    if(playerChose == true) {
-      playerVsHouse.style.display = '';
-      game.style.display = 'none';
-    } else {
-      playerVsHouse.style.display = 'none';
-      game.style.display = '';
-    }
-}
+result.style.display = 'none';
 
 
 
@@ -88,8 +50,14 @@ let houseChoice = [];
 let thePlayerChose = '';
 
 
+//The score holder
+
+let score = document.querySelector('.score');
 
 
+//The score number
+
+let scoreNum = 0;
 
 
 
@@ -157,24 +125,125 @@ function playerChoseScissor() {
 let houseSec = document.querySelector('.house');
 
 
+//The win or lose text changing depends on the choices of both sides
+
+let resultText = document.querySelector('.win-lose');
+
 
 function house() {
   let randomHouseChoice = Math.floor(Math.random() * 2);
-  if(houseChoice[randomHouseChoice] == 'paper')  {
+  if(houseChoice[randomHouseChoice] == 'paper' && thePlayerChose == 'rock')  {
     document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
     document.querySelector('.house-pic').style.border = '15px solid var(--Paper-Gradient)';
     document.querySelector('.house-pic').style.backgroundColor = 'white';
-  } else if(houseChoice[randomHouseChoice] == 'rock') {
+    resultText.innerHTML = 'LOSE'
+
+  } else if (houseChoice[randomHouseChoice] == 'paper' && thePlayerChose == 'scissor') {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Paper-Gradient)';
+    document.querySelector('.house-pic').style.backgroundColor = 'white';
+    resultText.innerHTML = 'WIN';
+    scoreNum++;
+    score.innerHTML = scoreNum;
+  }
+  
+  else if(houseChoice[randomHouseChoice] == 'rock' && thePlayerChose == 'paper') {
     document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
     document.querySelector('.house-pic').style.border = '15px solid var(--Rock-Gradient)';
     document.querySelector('.house-pic').style.backgroundColor = 'white';
+    resultText.innerHTML = 'WIN';
+    scoreNum++;
+    score.innerHTML = scoreNum;
+
+  } else if (houseChoice[randomHouseChoice] == 'rock' && thePlayerChose == 'scissor') {
+  document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
+  document.querySelector('.house-pic').style.border = '15px solid var(--Rock-Gradient)';
+  document.querySelector('.house-pic').style.backgroundColor = 'white';
+  resultText.innerHTML = 'LOSE' 
+}
+  else if (houseChoice[randomHouseChoice] == 'scissor' && thePlayerChose == 'rock') {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Scissors-Gradient)';
+    document.querySelector('.house-pic').style.backgroundColor = 'white';
+   scoreNum++;
+    score.innerHTML = scoreNum;
+
     
   } else {
     document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
     document.querySelector('.house-pic').style.border = '15px solid var(--Scissors-Gradient)';
     document.querySelector('.house-pic').style.backgroundColor = 'white';
+    resultText.innerHTML = 'LOSE' 
   }
-  
+  finalResult()
+}
+
+
+function finalResult() {
+  result.style.display = '';
+  resultShowing++;
+}
+
+//The chosing section
+
+let playerVsHouse = document.querySelector('.playerVsHouse');
+playerVsHouse.style.display = 'none'
+
+
+openRulesBtn.addEventListener('click', openThePage);
+
+function openThePage() {
+   if(rulesCount === 0) {
+    rulesCount++;
+    openRulesBtn.style.display = 'none';
+    document.body.style.overflow = 'hidden';
+    rules.style.display = '';
+    document.body.style.padding = '0';
+    game.style.display = 'none';
+    playerVsHouse.style.display = 'none';
+    titleAndScore.style.display = 'none';
+   }
+
+   if(resultShowing === 1) {
+    result.style.display = 'none';
+    
+  }else {
+    result.style.display = '';
+  }
+
+}
+
+
+closeRulesBtn.addEventListener('click', closeThePage);
+
+function closeThePage() {
+
+    if(rulesCount == 1) {
+      document.body.style.padding = '2rem';
+      document.body.style.overflow = '';
+      rules.style.display = 'none';
+      game.style.display = '';
+      titleAndScore.style.display = '';
+      openRulesBtn.style.display = '';
+      game.style.display = '';
+      
+      rulesCount--;
+    }
+
+    if(resultShowing === 1) {
+      result.style.display = '';
+      
+    }else {
+      result.style.display = 'none';
+    }
+
+     if(playerChose == true) {
+      playerVsHouse.style.display = '';
+      game.style.display = 'none';
+    } else {
+      playerVsHouse.style.display = 'none';
+      game.style.display = '';
+    }
 }
 
 
