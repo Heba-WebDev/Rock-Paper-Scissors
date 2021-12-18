@@ -109,6 +109,7 @@ function playerChosePaper() {
   thePlayerChose += 'paper';
   document.querySelector('.pic-paper').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
   document.querySelector('.player-pic').style.border = '15px solid var(--Paper-Gradient)';
+  house()
 }
 
 //Rock
@@ -126,7 +127,7 @@ function playerChoseRock() {
   thePlayerChose += 'rock';
   document.querySelector('.pic-paper').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
   document.querySelector('.player-pic').style.border = '15px solid var(--Rock-Gradient)';
-
+  house()
 }
 
 
@@ -146,27 +147,34 @@ function playerChoseScissor() {
   thePlayerChose += 'scissor';
   document.querySelector('.pic-paper').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
   document.querySelector('.player-pic').style.border = '15px solid var(--Scissors-Gradient)';
+  house()
 
 }
 
 
+//The house choise section
+
+let houseSec = document.querySelector('.house');
 
 
 
+function house() {
+  let randomHouseChoice = Math.floor(Math.random() * 2);
+  if(houseChoice[randomHouseChoice] == 'paper')  {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Paper-Gradient)';
+    document.querySelector('.house-pic').style.backgroundColor = 'white';
+  } else if(houseChoice[randomHouseChoice] == 'rock') {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Rock-Gradient)';
+    document.querySelector('.house-pic').style.backgroundColor = 'white';
+    
+  } else {
+    document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
+    document.querySelector('.house-pic').style.border = '15px solid var(--Scissors-Gradient)';
+    document.querySelector('.house-pic').style.backgroundColor = 'white';
+  }
+  
+}
 
 
-// function thehouseChose() {
-//   let randomHouseChoice = Math.floor((Math.random() * 2) + 1);
-
-//   if(houseChoice[randomHouseChoice] == 'paper') {
-//     document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-paper.svg';
-//     document.querySelector('.house-pic').style.border = '15px solid var(--Paper-Gradient)';
-//   } else if(houseChoice[randomHouseChoice] == 'rock') {
-//     document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-rock.svg';
-//     document.querySelector('.house-pic').style.border = '15px solid var(--Rock-Gradient)';
-//   } else {
-//     document.querySelector('.pic-house').src = '/Rock-Paper-Scissors/images/icon-scissors.svg';
-//     document.querySelector('.house-pic').style.border = '15px solid var(--Scissors-Gradient)';
-//   }
-
-// }

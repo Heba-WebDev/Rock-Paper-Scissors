@@ -351,8 +351,10 @@ body {
 }
 
 .house-pic {
-  height: 110px;
-  width: 110px;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 120px;
   background-color: rgb(31, 31, 73);
   border-radius: 50%;
 }
@@ -368,8 +370,8 @@ body {
     }
 
     .house-pic {
-        height: 140px;
-        width: 140px;
+        height: 150px;
+        width: 150px;
         background-color: rgb(31, 31, 73);
         border-radius: 50%;
       }
