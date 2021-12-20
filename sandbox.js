@@ -71,6 +71,7 @@ let paper = document.querySelector('.paper');
 paper.addEventListener('click', playerChosePaper);
 
 function playerChosePaper() {
+  resultShowing++;
   houseChoice.push('scissor');
   houseChoice.push('rock');
   playerChose = true;
@@ -89,6 +90,7 @@ let rock = document.querySelector('.rock');
 rock.addEventListener('click', playerChoseRock);
 
 function playerChoseRock() {
+  resultShowing++;
   houseChoice.push('scissor');
   houseChoice.push('paper');
   playerChose = true;
@@ -109,6 +111,7 @@ let scissor = document.querySelector('.scissor');
 scissor.addEventListener('click', playerChoseScissor);
 
 function playerChoseScissor() {
+  resultShowing++;
   houseChoice.push('paper');
   houseChoice.push('rock');
   playerChose = true;
@@ -183,7 +186,6 @@ function house() {
 
 function finalResult() {
   result.style.display = '';
-  resultShowing++;
 }
 
 //The chosing section
@@ -204,18 +206,14 @@ function openThePage() {
     game.style.display = 'none';
     playerVsHouse.style.display = 'none';
     titleAndScore.style.display = 'none';
+    result.style.display = 'none';
+   
    } 
 
-   if(resultShowing === 0) {
-    result.style.display = 'none';
-    playerVsHouse.style.display = 'none';
-    
-  } else {
-    result.style.display = '';
-    playerVsHouse.style.display = '';
-  }
+   
 
 }
+
 
 
 closeRulesBtn.addEventListener('click', closeThePage);
@@ -226,30 +224,23 @@ function closeThePage() {
       document.body.style.padding = '2rem';
       document.body.style.overflow = '';
       rules.style.display = 'none';
-      game.style.display = '';
       titleAndScore.style.display = '';
       openRulesBtn.style.display = '';
-      game.style.display = '';
-      
       rulesCount--;
-    }
+    } 
 
-    if(resultShowing === 1) {
-      result.style.display = '';
-      
-    }else {
-      result.style.display = 'none';
-    }
-
-     if(playerChose == true) {
-      playerVsHouse.style.display = '';
-      game.style.display = 'none';
-    } else {
-      playerVsHouse.style.display = 'none';
+    if(resultShowing === 0) {
       game.style.display = '';
+      playerVsHouse.style.display = 'none';
+      result.style.display = 'none';
+    } else {
+      game.style.display = 'none';
+      playerVsHouse.style.display = '';
+      result.style.display = '';
     }
+  
+  
 }
-
 
 //Start over the game
 
