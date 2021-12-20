@@ -38,7 +38,9 @@ let result = document.querySelector('.result');
 
 result.style.display = 'none';
 
+//The Restart button
 
+let resultBtn = document.querySelector('.result-btn');
 
 //The Array that will keep the other two choices left for the house
 
@@ -202,13 +204,15 @@ function openThePage() {
     game.style.display = 'none';
     playerVsHouse.style.display = 'none';
     titleAndScore.style.display = 'none';
-   }
+   } 
 
-   if(resultShowing === 1) {
+   if(resultShowing === 0) {
     result.style.display = 'none';
+    playerVsHouse.style.display = 'none';
     
-  }else {
+  } else {
     result.style.display = '';
+    playerVsHouse.style.display = '';
   }
 
 }
@@ -247,3 +251,21 @@ function closeThePage() {
 }
 
 
+//Start over the game
+
+resultBtn.addEventListener('click', startOver);
+
+function startOver() {
+  
+  while(houseChoice.length != 0) {
+    houseChoice.pop();
+  };
+  playerChose = false;
+  game.style.display = '';
+  thePlayerChose = '';
+  result.style.display = 'none';
+  resultText.innerHTML = '';
+  playerVsHouse.style.display = 'none';
+  rulesCount = 0;
+  resultShowing = 0;
+}
