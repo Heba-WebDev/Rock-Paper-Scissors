@@ -23,7 +23,6 @@
      --Header-outline: hsl(217, 16%, 45%);
      --Radial-Gardient-BG: hsl(214, 47%, 23%) to hsl(237, 49%, 15%);
  
-
       /* colors */
       --fs-700: 1.5rem;
       --fs-600: 1rem;
@@ -137,17 +136,22 @@ select {
 
 body {
     font-family: 'Barlow Semi Condensed';
-    
     background: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
-    height: 100vh;
     padding: 2rem;
+    height: 100vh;
 }
 
+@media (max-width: 24rem) {
+    body {
+        height: auto;
+    }
+}
 
 .main {
-    
     width: 100%;
+    
 }
+
 
 
 
@@ -401,3 +405,13 @@ body {
     letter-spacing: 2px;
     color: var(--Dark-text);
 }
+
+@media (min-width: 45rem) {
+    .result-btn {
+       width: 30%;
+       margin: 0 auto;
+    }
+
+}
+
+

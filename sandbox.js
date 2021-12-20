@@ -32,6 +32,7 @@ let openRulesBtn = document.querySelector('.readrules');
 let rules = document.querySelector('.rules');
 rules.style.display = 'none';
 
+
 // The result section
 
 let result = document.querySelector('.result');
@@ -207,6 +208,7 @@ function openThePage() {
     playerVsHouse.style.display = 'none';
     titleAndScore.style.display = 'none';
     result.style.display = 'none';
+    resultWrapper.style.display = 'none';
    
    } 
 
@@ -226,6 +228,7 @@ function closeThePage() {
       rules.style.display = 'none';
       titleAndScore.style.display = '';
       openRulesBtn.style.display = '';
+      resultWrapper.style.display = '';
       rulesCount--;
     } 
 
