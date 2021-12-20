@@ -37,7 +37,7 @@ rules.style.display = 'none';
 
 let result = document.querySelector('.result');
 
-result.style.display = 'none';
+
 
 //The Restart button
 
@@ -228,18 +228,17 @@ function closeThePage() {
       rules.style.display = 'none';
       titleAndScore.style.display = '';
       openRulesBtn.style.display = '';
-      resultWrapper.style.display = '';
       rulesCount--;
     } 
 
-    if(resultShowing === 0) {
-      game.style.display = '';
-      playerVsHouse.style.display = 'none';
-      result.style.display = 'none';
-    } else {
+    if(resultShowing === 1) {
       game.style.display = 'none';
       playerVsHouse.style.display = '';
       result.style.display = '';
+    } else {
+      game.style.display = '';
+      playerVsHouse.style.display = 'none';
+      result.style.display = 'none';
     }
   
   

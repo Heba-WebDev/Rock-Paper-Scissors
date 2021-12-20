@@ -315,14 +315,33 @@ body {
 }
 
 .playerVsHouse {
-   justify-content: space-between;
-    padding: 5rem 0;
+   grid-template-areas: 'player house'
+   'result result';
+    padding: 1rem 0;
+    height: 50vh;
+    width: 100%;
+    gap: 1.3rem;
 }
+
+.player {
+    grid-area: player;
+}
+.result {
+    grid-area: result;
+}
+
+.house {
+    grid-area: house;
+}
+
 
 @media (min-width: 45rem) {
     .playerVsHouse {
-        width: 50%;
-        margin: 0 auto;
+        grid-template-areas: 'player result house';
+    padding: 1rem 0;
+    height: 50vh;
+    width: 80%;
+    margin: 0 auto;
     }
 }
 
@@ -407,11 +426,20 @@ body {
 }
 
 @media (min-width: 45rem) {
+
+    .result {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .result-btn {
-       width: 30%;
+       width: 100%;
        margin: 0 auto;
+       height: 50px;
     }
 
 }
+
 
 
