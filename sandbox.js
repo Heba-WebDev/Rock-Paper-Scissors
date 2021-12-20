@@ -208,8 +208,6 @@ function openThePage() {
     playerVsHouse.style.display = 'none';
     titleAndScore.style.display = 'none';
     result.style.display = 'none';
-    resultWrapper.style.display = 'none';
-   
    } 
 
    
